@@ -12,6 +12,7 @@
             <sourceRootList>
                 <sourceRootElem>lib/String</sourceRootElem>
                 <sourceRootElem>test</sourceRootElem>
+                <sourceRootElem>lib/fs/Uci</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

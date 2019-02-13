@@ -37,8 +37,12 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/lib/String/String.o \
 	${OBJECTDIR}/lib/String/TokenString.o \
-	${OBJECTDIR}/lib/String/string_test.o \
-	${OBJECTDIR}/test/main.o
+	${OBJECTDIR}/lib/fs/Uci/Uci.o \
+	${OBJECTDIR}/lib/fs/Uci/UciSection.o \
+	${OBJECTDIR}/test/main.o \
+	${OBJECTDIR}/test/string_test.o \
+	${OBJECTDIR}/test/uci_cmd_test.o \
+	${OBJECTDIR}/test/uci_test.o
 
 
 # C Compiler Flags
@@ -75,15 +79,35 @@ ${OBJECTDIR}/lib/String/TokenString.o: lib/String/TokenString.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/lib/String/TokenString.o lib/String/TokenString.cpp
 
-${OBJECTDIR}/lib/String/string_test.o: lib/String/string_test.cpp
-	${MKDIR} -p ${OBJECTDIR}/lib/String
+${OBJECTDIR}/lib/fs/Uci/Uci.o: lib/fs/Uci/Uci.cpp
+	${MKDIR} -p ${OBJECTDIR}/lib/fs/Uci
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/lib/String/string_test.o lib/String/string_test.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/lib/fs/Uci/Uci.o lib/fs/Uci/Uci.cpp
+
+${OBJECTDIR}/lib/fs/Uci/UciSection.o: lib/fs/Uci/UciSection.cpp
+	${MKDIR} -p ${OBJECTDIR}/lib/fs/Uci
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/lib/fs/Uci/UciSection.o lib/fs/Uci/UciSection.cpp
 
 ${OBJECTDIR}/test/main.o: test/main.cpp
 	${MKDIR} -p ${OBJECTDIR}/test
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/test/main.o test/main.cpp
+
+${OBJECTDIR}/test/string_test.o: test/string_test.cpp
+	${MKDIR} -p ${OBJECTDIR}/test
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/test/string_test.o test/string_test.cpp
+
+${OBJECTDIR}/test/uci_cmd_test.o: test/uci_cmd_test.cpp
+	${MKDIR} -p ${OBJECTDIR}/test
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/test/uci_cmd_test.o test/uci_cmd_test.cpp
+
+${OBJECTDIR}/test/uci_test.o: test/uci_test.cpp
+	${MKDIR} -p ${OBJECTDIR}/test
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/test/uci_test.o test/uci_test.cpp
 
 # Subprojects
 .build-subprojects:
