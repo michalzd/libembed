@@ -170,7 +170,7 @@ void test_staticstring_three()
 int main(int argc, char** argv) {
 
     test_class_StringBuffer();
-    test_class_StringBuffer();
+    test_class_String();
     
     return 0;
 }
