@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/lib/String/String.o \
 	${OBJECTDIR}/lib/String/TokenString.o \
+	${OBJECTDIR}/lib/String/string_test.o \
 	${OBJECTDIR}/test/main.o
 
 
@@ -73,6 +74,11 @@ ${OBJECTDIR}/lib/String/TokenString.o: lib/String/TokenString.cpp
 	${MKDIR} -p ${OBJECTDIR}/lib/String
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/lib/String/TokenString.o lib/String/TokenString.cpp
+
+${OBJECTDIR}/lib/String/string_test.o: lib/String/string_test.cpp
+	${MKDIR} -p ${OBJECTDIR}/lib/String
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/lib/String/string_test.o lib/String/string_test.cpp
 
 ${OBJECTDIR}/test/main.o: test/main.cpp
 	${MKDIR} -p ${OBJECTDIR}/test
