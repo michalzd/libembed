@@ -1,0 +1,3 @@
+#ignore building output directory
+/build
+/dist
